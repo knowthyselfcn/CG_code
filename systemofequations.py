@@ -17,20 +17,20 @@ def randomGenHugeFullRankMatrix(dim):
 d = 5
 
 vb = range(1, d+1)
-vx = list( reversed(vb) )
+vx = list(reversed(vb))
 
-m =  randomGenHugeFullRankMatrix(d)
+m = randomGenHugeFullRankMatrix(d)
 
 
 for i,v in enumerate(vx):
     x = vx[i]
     b = vb[i]
     mn = b / x
-    #print(mn)
+    # print(mn)
     m[i][i] = mn
 
-#r = numpy.linalg.matrix_rank(m)
-#print(r)
+r = numpy.linalg.matrix_rank(m)
+print(r)
 
 P, L, U = scipy.linalg.lu(m)
 #print(P, L, U)
